@@ -12,8 +12,6 @@ int n, i, j, l, k;
 
 printf ("Digite um número ímpar que será o número máximo do triângulo:\n");
 
-// imprimir o número enquanto a pessoa digitar um número par, mostrando a mensagem de erro
-
 do
 
 {
