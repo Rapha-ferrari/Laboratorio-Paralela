@@ -33,3 +33,27 @@ int menu(){
 
 }
 
+void *Vector_X_EM(void *threadid){	
+	int i = *(int*)threadid;
+	float sum;
+	int j;
+	for (j = 0, sum = 0; ME[i][j].indice!=0; j++)
+		sum += ME[i][j].valor*VETOR[ME[i][j].indice-1];
+	EM_VECTORS[i]=sum;
+	pthread_exit(NULL);
+}
+
+void *EM_X_DM(void *threadid){
+	int i = *(int*)threadid;
+	int j, k; 
+	float sum;
+
+	for ( j = 0; j < Dcolumns; j++){
+		for ( k = 0, sum = 0; ME[i][k].indice!=0; k++)
+			sum+=ME[i][k].valor*MD[ME[i][k].indice-1][j];
+		EM_MATRIX[i][j]=sum;
+	}
+
+	pthread_exit(NULL);
+}
+
