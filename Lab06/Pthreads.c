@@ -27,7 +27,7 @@ float EM_EM2[row][Dcolumns2];
 int menu(){
   system("clear");
   int opt;
-  printf("                              MENU\n\n1 - MultiplicaÃ§Ã£o de uma matriz esparsa por um vetor denso\n2 - MultiplicaÃ§Ã£o de uma matriz esparsa por outra matriz esparsa\n3 - MultiplicaÃ§Ã£o de uma matriz esparsa por uma matriz densa \n4 - Sair\n\nopt: ");
+  printf("                              MENU\n\n1 - Multiplicação de uma matriz esparsa por um vetor denso\n2 - Multiplicação de uma matriz esparsa por outra matriz esparsa\n3 - Multiplicação de uma matriz esparsa por uma matriz densa \n4 - Sair\n\nopt: ");
   scanf("%d", &opt);
   return opt;
 
