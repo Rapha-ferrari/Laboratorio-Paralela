@@ -57,3 +57,19 @@ void *EM_X_DM(void *threadid){
 	pthread_exit(NULL);
 }
 
+void *EM_X_EM(void *threadid){
+	int i = *(int*)threadid;
+	int j, k, l;
+	float sum;	
+	for ( j = 0; j < Dcolumns2; j++){
+	
+		for ( k = 0, sum = 0; ME[i][k].indice!=0; k++)
+			for (l = 0; ME2[ME[i][k].indice-1][l].indice != 0; l++)
+				if(ME2[ME[i][k].indice-1][l].indice == (j+1))
+					sum += ME[i][k].valor * ME2[ME[i][k].indice-1][l].valor;		
+		EM_EM2[i][j]=sum;	
+	}
+
+	pthread_exit(NULL);
+}
+
